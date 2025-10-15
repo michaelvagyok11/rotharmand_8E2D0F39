@@ -1,0 +1,198 @@
+/* Alapbeállítások és változók */
+:root {
+    --primary-color: #34495e;
+    --secondary-color: #41a0a0;
+    --background-color: #f4f7f6;
+    --text-color: #333;
+    --light-grey: #ecf0f1;
+    --white: #ffffff;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigáció */
+header {
+    background-color: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--secondary-color);
+}
+
+/* Általános konténer és gombok */
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #388a8a;
+    transform: translateY(-2px);
+}
+
+/* Kártya stílusok */
+.calculator-card, .exercise-card, .affirmation-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Főoldal specifikus */
+.hero {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+input[type="number"] {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 60px;
+    text-align: center;
+}
+
+.result {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* Gyakorlatok oldal: Légzőkör */
+.breathing-circle-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: transform 4s ease-in-out, background-color 2s ease;
+}
+
+#breathing-text {
+    position: absolute;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.circle.grow { transform: scale(1.5); }
+.circle.shrink { transform: scale(1); }
+
+/* Megerősítések oldal */
+.affirmation-display {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    background-color: var(--light-grey);
+    border-radius: 5px;
+}
+
+blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+/* Lábléc */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Reszponzivitás */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+}
